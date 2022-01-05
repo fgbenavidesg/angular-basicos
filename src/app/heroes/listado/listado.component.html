@@ -1,0 +1,28 @@
+<p>listado works!</p>
+
+<p>iterador</p>
+
+<ul >
+   <li *ngFor="let heroe of heroes; let i= index">
+        {{i + 1 }} - {{heroe}}
+
+   </li>
+</ul>
+
+ 
+<p>si heroe borrado es diferente a  vacio se muestra</p> 
+
+<div *ngIf="heroeBorrado !=='' ; else noBorrado">
+
+    <h3>heroe borrado : <span>{{heroeBorrado}} </span></h3>
+     
+</div>
+
+<p>referencias locales</p>
+
+<ng-template #noBorrado>
+    <h3>no ha borrado nada</h3>
+</ng-template>
+
+
+<button (click)="borrarHeroe()">borrar Heroe</button>
